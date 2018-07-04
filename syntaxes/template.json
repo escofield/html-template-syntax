@@ -1,0 +1,21 @@
+{
+	"name": "HTML Templates",
+	"scopeName": "text.html.template",
+
+	"patterns": [
+		{
+			"include": "text.html.basic"
+		},
+		{
+			"begin": "({{)",
+			"beginCaptures": {
+				"0": { "name": "text.html.template.mustache.escape.begin"}
+			},
+			"end": "(?!{{)(.*)(}})",
+			"endCaptures": {
+				"1": { "name": "text.html.template.mustache.body"},
+				"2": { "name": "text.html.template.mustache.escape.end"}
+			}
+		}
+	]
+}
